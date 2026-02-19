@@ -1,0 +1,364 @@
+{
+  "customers": [
+    {
+      "id": "C-4821",
+      "name": "James Chen",
+      "tier": "Platinum",
+      "avg_spend": 4200,
+      "lifetime_value": 42000,
+      "last_purchase_date": "2025-01-15",
+      "days_since_purchase": 35,
+      "purchase_frequency_days": 45,
+      "preferred_categories": ["Apparel/Outerwear", "Apparel/Tailoring"],
+      "preferred_price_range": [1500, 5000],
+      "size_profile": {
+        "apparel": "40R",
+        "shoes": "10"
+      },
+      "engagement_status": "Active",
+      "preferred_contact": "SMS"
+    },
+    {
+      "id": "C-3192",
+      "name": "Sarah Martinez",
+      "tier": "Gold",
+      "avg_spend": 2800,
+      "lifetime_value": 28000,
+      "last_purchase_date": "2024-12-20",
+      "days_since_purchase": 61,
+      "purchase_frequency_days": 60,
+      "preferred_categories": ["Accessories/Bags", "Apparel/Tops"],
+      "preferred_price_range": [800, 3000],
+      "size_profile": {
+        "apparel": "6",
+        "shoes": "8"
+      },
+      "engagement_status": "At Risk",
+      "preferred_contact": "Email"
+    },
+    {
+      "id": "C-5467",
+      "name": "Michael Thompson",
+      "tier": "Platinum",
+      "avg_spend": 5100,
+      "lifetime_value": 61200,
+      "last_purchase_date": "2025-02-10",
+      "days_since_purchase": 10,
+      "purchase_frequency_days": 30,
+      "preferred_categories": ["Apparel/Formalwear", "Accessories/Neckwear", "Footwear/Dress Shoes"],
+      "preferred_price_range": [2000, 6000],
+      "size_profile": {
+        "apparel": "42R",
+        "shoes": "11"
+      },
+      "engagement_status": "Highly Active",
+      "preferred_contact": "Phone"
+    },
+    {
+      "id": "C-2834",
+      "name": "Emily Rodriguez",
+      "tier": "Silver",
+      "avg_spend": 1200,
+      "lifetime_value": 8400,
+      "last_purchase_date": "2024-11-30",
+      "days_since_purchase": 82,
+      "purchase_frequency_days": 90,
+      "preferred_categories": ["Accessories/Eyewear", "Apparel/Casualwear"],
+      "preferred_price_range": [150, 800],
+      "size_profile": {
+        "apparel": "S",
+        "shoes": "7"
+      },
+      "engagement_status": "Lapsed",
+      "preferred_contact": "Email"
+    },
+    {
+      "id": "C-6712",
+      "name": "David Park",
+      "tier": "Gold",
+      "avg_spend": 3400,
+      "lifetime_value": 37400,
+      "last_purchase_date": "2025-01-28",
+      "days_since_purchase": 23,
+      "purchase_frequency_days": 50,
+      "preferred_categories": ["Apparel/Knitwear", "Apparel/Shirts", "Accessories/Belts"],
+      "preferred_price_range": [300, 2000],
+      "size_profile": {
+        "apparel": "M",
+        "shoes": "9"
+      },
+      "engagement_status": "Active",
+      "preferred_contact": "Email"
+    },
+    {
+      "id": "C-1829",
+      "name": "Alexandra Bennett",
+      "tier": "Platinum",
+      "avg_spend": 4800,
+      "lifetime_value": 52800,
+      "last_purchase_date": "2025-02-05",
+      "days_since_purchase": 15,
+      "purchase_frequency_days": 35,
+      "preferred_categories": ["Accessories/Bags", "Apparel/Outerwear", "Home/Textiles"],
+      "preferred_price_range": [1000, 5000],
+      "size_profile": {
+        "apparel": "4",
+        "shoes": "8.5"
+      },
+      "engagement_status": "Highly Active",
+      "preferred_contact": "SMS"
+    },
+    {
+      "id": "C-9134",
+      "name": "Robert Kim",
+      "tier": "Silver",
+      "avg_spend": 950,
+      "lifetime_value": 7600,
+      "last_purchase_date": "2024-12-05",
+      "days_since_purchase": 76,
+      "purchase_frequency_days": 75,
+      "preferred_categories": ["Apparel/Casualwear", "Accessories/Watch Accessories"],
+      "preferred_price_range": [150, 500],
+      "size_profile": {
+        "apparel": "L",
+        "shoes": "10.5"
+      },
+      "engagement_status": "At Risk",
+      "preferred_contact": "Email"
+    },
+    {
+      "id": "C-4523",
+      "name": "Jennifer Wu",
+      "tier": "Gold",
+      "avg_spend": 2900,
+      "lifetime_value": 26100,
+      "last_purchase_date": "2025-01-22",
+      "days_since_purchase": 29,
+      "purchase_frequency_days": 55,
+      "preferred_categories": ["Apparel/Tops", "Accessories/Scarves", "Footwear/Shoes"],
+      "preferred_price_range": [400, 1800],
+      "size_profile": {
+        "apparel": "8",
+        "shoes": "9"
+      },
+      "engagement_status": "Active",
+      "preferred_contact": "Phone"
+    },
+    {
+      "id": "C-7845",
+      "name": "Christopher Hayes",
+      "tier": "Platinum",
+      "avg_spend": 5500,
+      "lifetime_value": 71500,
+      "last_purchase_date": "2025-02-12",
+      "days_since_purchase": 8,
+      "purchase_frequency_days": 25,
+      "preferred_categories": ["Apparel/Tailoring", "Apparel/Outerwear", "Footwear/Boots"],
+      "preferred_price_range": [2500, 7000],
+      "size_profile": {
+        "apparel": "44R",
+        "shoes": "11.5"
+      },
+      "engagement_status": "Highly Active",
+      "preferred_contact": "SMS"
+    },
+    {
+      "id": "C-2156",
+      "name": "Lisa Patel",
+      "tier": "Gold",
+      "avg_spend": 2200,
+      "lifetime_value": 19800,
+      "last_purchase_date": "2024-12-28",
+      "days_since_purchase": 54,
+      "purchase_frequency_days": 65,
+      "preferred_categories": ["Accessories/Bags", "Home/Decor"],
+      "preferred_price_range": [300, 2500],
+      "size_profile": {
+        "apparel": "2",
+        "shoes": "7.5"
+      },
+      "engagement_status": "At Risk",
+      "preferred_contact": "Email"
+    },
+    {
+      "id": "C-8923",
+      "name": "Thomas Anderson",
+      "tier": "Silver",
+      "avg_spend": 800,
+      "lifetime_value": 5600,
+      "last_purchase_date": "2024-11-15",
+      "days_since_purchase": 97,
+      "purchase_frequency_days": 100,
+      "preferred_categories": ["Apparel/Shirts", "Apparel/Pants"],
+      "preferred_price_range": [100, 400],
+      "size_profile": {
+        "apparel": "L",
+        "shoes": "10"
+      },
+      "engagement_status": "Lapsed",
+      "preferred_contact": "Email"
+    },
+    {
+      "id": "C-5291",
+      "name": "Victoria Chen",
+      "tier": "Platinum",
+      "avg_spend": 4600,
+      "lifetime_value": 50600,
+      "last_purchase_date": "2025-02-08",
+      "days_since_purchase": 12,
+      "purchase_frequency_days": 40,
+      "preferred_categories": ["Apparel/Formalwear", "Accessories/Neckwear", "Home/Barware"],
+      "preferred_price_range": [1500, 4500],
+      "size_profile": {
+        "apparel": "6",
+        "shoes": "8"
+      },
+      "engagement_status": "Active",
+      "preferred_contact": "Phone"
+    },
+    {
+      "id": "C-6438",
+      "name": "Daniel Foster",
+      "tier": "Gold",
+      "avg_spend": 3100,
+      "lifetime_value": 31000,
+      "last_purchase_date": "2025-01-10",
+      "days_since_purchase": 41,
+      "purchase_frequency_days": 48,
+      "preferred_categories": ["Apparel/Knitwear", "Footwear/Shoes", "Accessories/Belts"],
+      "preferred_price_range": [500, 2200],
+      "size_profile": {
+        "apparel": "XL",
+        "shoes": "12"
+      },
+      "engagement_status": "Active",
+      "preferred_contact": "SMS"
+    },
+    {
+      "id": "C-3712",
+      "name": "Rachel Green",
+      "tier": "Silver",
+      "avg_spend": 1100,
+      "lifetime_value": 9900,
+      "last_purchase_date": "2024-12-15",
+      "days_since_purchase": 67,
+      "purchase_frequency_days": 80,
+      "preferred_categories": ["Accessories/Eyewear", "Apparel/Casualwear", "Accessories/Scarves"],
+      "preferred_price_range": [150, 700],
+      "size_profile": {
+        "apparel": "M",
+        "shoes": "8.5"
+      },
+      "engagement_status": "At Risk",
+      "preferred_contact": "Email"
+    },
+    {
+      "id": "C-7234",
+      "name": "Andrew Liu",
+      "tier": "Platinum",
+      "avg_spend": 4900,
+      "lifetime_value": 63700,
+      "last_purchase_date": "2025-02-14",
+      "days_since_purchase": 6,
+      "purchase_frequency_days": 28,
+      "preferred_categories": ["Apparel/Outerwear", "Apparel/Tailoring", "Footwear/Dress Shoes"],
+      "preferred_price_range": [2000, 6000],
+      "size_profile": {
+        "apparel": "38R",
+        "shoes": "9"
+      },
+      "engagement_status": "Highly Active",
+      "preferred_contact": "Phone"
+    },
+    {
+      "id": "C-4189",
+      "name": "Michelle Davis",
+      "tier": "Gold",
+      "avg_spend": 2600,
+      "lifetime_value": 23400,
+      "last_purchase_date": "2025-01-18",
+      "days_since_purchase": 33,
+      "purchase_frequency_days": 58,
+      "preferred_categories": ["Apparel/Tops", "Accessories/Bags", "Home/Textiles"],
+      "preferred_price_range": [600, 2800],
+      "size_profile": {
+        "apparel": "4",
+        "shoes": "7"
+      },
+      "engagement_status": "Active",
+      "preferred_contact": "Email"
+    },
+    {
+      "id": "C-9567",
+      "name": "Brian Carter",
+      "tier": "Silver",
+      "avg_spend": 1050,
+      "lifetime_value": 8400,
+      "last_purchase_date": "2024-11-25",
+      "days_since_purchase": 87,
+      "purchase_frequency_days": 85,
+      "preferred_categories": ["Apparel/Casualwear", "Apparel/Shirts"],
+      "preferred_price_range": [100, 600],
+      "size_profile": {
+        "apparel": "M",
+        "shoes": "9.5"
+      },
+      "engagement_status": "Lapsed",
+      "preferred_contact": "Email"
+    },
+    {
+      "id": "C-5834",
+      "name": "Natalie Wong",
+      "tier": "Platinum",
+      "avg_spend": 5200,
+      "lifetime_value": 67600,
+      "last_purchase_date": "2025-02-11",
+      "days_since_purchase": 9,
+      "purchase_frequency_days": 32,
+      "preferred_categories": ["Accessories/Bags", "Apparel/Outerwear", "Accessories/Eyewear"],
+      "preferred_price_range": [1800, 5500],
+      "size_profile": {
+        "apparel": "2",
+        "shoes": "7.5"
+      },
+      "engagement_status": "Highly Active",
+      "preferred_contact": "SMS"
+    },
+    {
+      "id": "C-2945",
+      "name": "Kevin Murphy",
+      "tier": "Gold",
+      "avg_spend": 2400,
+      "lifetime_value": 21600,
+      "last_purchase_date": "2025-01-25",
+      "days_since_purchase": 26,
+      "purchase_frequency_days": 52,
+      "preferred_categories": ["Apparel/Knitwear", "Footwear/Boots", "Accessories/Watch Accessories"],
+      "preferred_price_range": [400, 1900],
+      "size_profile": {
+        "apparel": "L",
+        "shoes": "10.5"
+      },
+      "engagement_status": "Active",
+      "preferred_contact": "Phone"
+    },
+    {
+      "id": "C-6821",
+      "name": "Sophia Taylor",
+      "tier": "Gold",
+      "avg_spend": 3200,
+      "lifetime_value": 35200,
+      "last_purchase_date": "2025-02-02",
+      "days_since_purchase": 18,
+      "purchase_frequency_days": 45,
+      "preferred_categories": ["Apparel/Tops", "Accessories/Scarves", "Home/Decor"],
+      "preferred_price_range": [500, 2400],
+      "size_profile": {
+        "apparel": "8",
+        "shoes": "9"
+      },
+      "engagement_status": "Active",
+      "preferred_contact": "Email"
+    }
+  ]
+}
