@@ -1,0 +1,10 @@
+# Environment variables (API keys)
+.env
+**/.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Shared runtime data
+shared/*.json
