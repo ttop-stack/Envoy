@@ -15,8 +15,8 @@ from prometheus_client import start_http_server, Counter, Gauge, Summary
 # SECTION 1: CONFIG & SETUP
 # ══════════════════════════════════════════════════════════════
 
-DATA_DIR = Path("/data")
-SHARED_DIR = Path("/shared")
+DATA_DIR = Path("/home/tacosta/Envoy/data")
+SHARED_DIR = Path("/home/tacosta/Envoy/shared")
 PRODUCTS_FILE = DATA_DIR / "mock_products.json"
 EVENTS_FILE = SHARED_DIR / "events.json"
 SCAN_INTERVAL = 30  # seconds between scans
@@ -41,23 +41,20 @@ def load_products():
     
     Returns:
         list: List of product dictionaries from mock_products.json
-    
-    
     """
-    with open(PRODUCTS_FILE), 'r') as f:
-	data =json.load(f)
-    return data['products']
-except FileNotFoundError:
-	print(f"[ERROR] Product file not found: {PRODUCTS_FILE}")
-	return []
-except json.JSONDecodeError as e:
-	print(f"[ERROR] Invalid JSON in product file: {e}")
-	return []
-except KeyError:
-	print(f"[ERROR] 'products' key not found in JSON")
-	return []
-    pass
-
+    try:
+        with open(PRODUCTS_FILE, 'r') as f:
+            data = json.load(f)
+        return data['products']
+    except FileNotFoundError:
+        print(f"[ERROR] Product file not found: {PRODUCTS_FILE}")
+        return []
+    except json.JSONDecodeError as e:
+        print(f"[ERROR] Invalid JSON in product file: {e}")
+        return []
+    except KeyError:
+        print(f"[ERROR] 'products' key not found in JSON")
+        return []
 
 def log_event(event):
     """
@@ -76,24 +73,19 @@ def log_event(event):
     - Handle any file errors gracefully
     """
     if EVENTS_FILE.exists():
-	with open(EVENTS_FILE, 'r') as f:
-		events = json.load(f)
-   else:
-	events = []
-   
-   event['timestamp'] = datetime.now().isoformat()
-
-   events.append(event)
-
-   with open(EVENTS_FILE, 'w') as f:
-	json.dump(events,f,indent=2)
-  
-  print(f"[EVENT] {event['event_type']}: {event['product_name']}(Stock: {event.get('stock_level','N/A')})")
-
- EVENTS_DETECTED.labels(event_type=event['event_type']).inc()
-
-    pass
-
+        with open(EVENTS_FILE, 'r') as f:
+            events = json.load(f)
+    else:
+        events = []
+    
+    event['timestamp'] = datetime.now().isoformat()
+    events.append(event)
+    
+    with open(EVENTS_FILE, 'w') as f:
+        json.dump(events, f, indent=2)
+    
+    print(f"[EVENT] {event['event_type']}: {event['product_name']} (Stock: {event.get('stock_level', 'N/A')})")
+    EVENTS_DETECTED.labels(event_type=event['event_type']).inc()
 
 def detect_scarcity_events(product, previous_stock=None):
     """
@@ -121,8 +113,50 @@ def detect_scarcity_events(product, previous_stock=None):
     
     TODO: Implement the three detection rules above and return a list of event dicts
     """
-    # YOUR CODE HERE
-    pass
+    events = []  # Start with empty list
+    
+    stock = product['stock_level']
+    threshold = product['stock_threshold']
+    
+    # Rule 1: LOW_STOCK
+    if stock > 0 and stock <= threshold:
+        events.append({
+            'event_type': 'LOW_STOCK',
+            'product_id': product['id'],
+            'product_name': product['name'],
+            'category': product['category'],
+            'stock_level': stock,
+            'threshold': threshold,
+            'price': product['price'],
+            'urgency': 'HIGH' if stock <= 5 else 'MEDIUM'
+        })
+    
+    # Rule 2: SOLD_OUT (only if we have previous stock data)
+    if stock == 0 and previous_stock is not None and previous_stock > 0:
+        events.append({
+            'event_type': 'SOLD_OUT',
+            'product_id': product['id'],
+            'product_name': product['name'],
+            'category': product['category'],
+            'stock_level': stock,
+            'price': product['price'],
+            'urgency': 'CRITICAL'
+        })
+    
+    # Rule 3: RESTOCK (only if we have previous stock data)
+    if stock > 0 and previous_stock is not None and previous_stock == 0:
+        events.append({
+            'event_type': 'RESTOCK',
+            'product_id': product['id'],
+            'product_name': product['name'],
+            'category': product['category'],
+            'stock_level': stock,
+            'price': product['price'],
+            'sell_velocity_days': product['sell_velocity_days'],
+            'urgency': 'CRITICAL' if product['sell_velocity_days'] < 10 else 'HIGH'
+        })
+    
+    return events 
 
 
 # ══════════════════════════════════════════════════════════════
