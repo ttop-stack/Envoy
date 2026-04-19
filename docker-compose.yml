@@ -1,0 +1,70 @@
+version: '3.8'
+
+services:
+  # Monitor Service - Detects scarcity events
+  monitor:
+    build: ./monitor
+    container_name: envoy-monitor
+    volumes:
+      - ./data:/data:ro          # Read-only product/customer data
+      - ./shared:/shared         # Shared events/alerts
+    networks:
+      - envoy-network
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  # Alert Engine - Matches events to customers
+  alert_engine:
+    build: ./alert_engine
+    container_name: envoy-alert-engine
+    volumes:
+      - ./data:/data:ro
+      - ./shared:/shared
+    networks:
+      - envoy-network
+    restart: unless-stopped
+    env_file:
+      - ./alert_engine/.env      # Load ANTHROPIC_API_KEY
+    environment:
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      - monitor                  # Wait for monitor to start first
+
+  # Prometheus - Metrics collection
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: envoy-prometheus
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    ports:
+      - "9090:9090"
+    networks:
+      - envoy-network
+    restart: unless-stopped
+
+  # Grafana - Visualization dashboard
+  grafana:
+    image: grafana/grafana:latest
+    container_name: envoy-grafana
+    ports:
+      - "3000:3000"
+    networks:
+      - envoy-network
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=envoy2025
+      - GF_USERS_ALLOW_SIGN_UP=false
+    restart: unless-stopped
+    depends_on:
+      - prometheus
+
+networks:
+  envoy-network:
+    driver: bridge
+
+volumes:
+  prometheus_data:
+  grafana_data:
