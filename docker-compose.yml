@@ -6,8 +6,8 @@ services:
     build: ./monitor
     container_name: envoy-monitor
     volumes:
-      - ./data:/data:ro          # Read-only product/customer data
-      - ./shared:/shared         # Shared events/alerts
+      - ./data:/home/tacosta/Envoy/data:ro
+      - ./shared:/home/tacosta/Envoy/shared
     networks:
       - envoy-network
     restart: unless-stopped
@@ -19,17 +19,17 @@ services:
     build: ./alert_engine
     container_name: envoy-alert-engine
     volumes:
-      - ./data:/data:ro
-      - ./shared:/shared
+      - ./data:/home/tacosta/Envoy/data:ro
+      - ./shared:/home/tacosta/Envoy/shared
     networks:
       - envoy-network
     restart: unless-stopped
     env_file:
-      - ./alert_engine/.env      # Load ANTHROPIC_API_KEY
+      - ./alert_engine/.env
     environment:
       - PYTHONUNBUFFERED=1
     depends_on:
-      - monitor                  # Wait for monitor to start first
+      - monitor
 
   # Prometheus - Metrics collection
   prometheus:
@@ -57,6 +57,8 @@ services:
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=envoy2025
       - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana_data:/var/lib/grafana
     restart: unless-stopped
     depends_on:
       - prometheus
