@@ -278,7 +278,7 @@ This project maps directly to two Ralph Lauren roles:
 
 ## Acknowledgments
 
-Built for CS Operating Systems final project, Spring 2025.  
+Built for CS Operating Systems final project, Spring 2026.  
 Inspired by real clienteling workflows at luxury fashion brands.
 
 ---
