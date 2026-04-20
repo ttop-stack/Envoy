@@ -242,14 +242,7 @@ Available at `http://YOUR_VM_IP:9090/metrics`:
 
 ---
 
-## Demo Notes
 
-**For Presentation:**
-1. Show Grafana dashboard with live metrics
-2. Demo `cat shared/alerts.json` to show generated alerts
-3. Show `docker ps` to demonstrate containerization
-4. Explain customer matching algorithm with scoring breakdown
-5. Connect to Ralph Lauren job descriptions (Web Ops + Client Development)
 
 **Fallback Messages:**
 If API credits run out, the system automatically uses template-based fallback messages. The matching logic and system architecture remain fully functional.
