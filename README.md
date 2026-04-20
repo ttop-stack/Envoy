@@ -1,6 +1,6 @@
 # Envoy — Real-Time Clienteling Alert System
 
-A Dockerized intelligence platform that monitors luxury fashion inventory in real-time, detects scarcity events, matches them to VIP customers, and generates personalized outreach alerts. Built for Operating Systems final project (Spring 2025).
+A Dockerized intelligence platform that monitors luxury fashion inventory in real-time, detects scarcity events, matches them to VIP customers, and generates personalized outreach alerts. Built for Operating Systems final project (Spring 2026).
 
 **Target Use Case:** Ralph Lauren Web Operations & Client Development roles
 
